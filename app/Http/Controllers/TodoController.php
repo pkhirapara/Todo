@@ -9,8 +9,11 @@ class TodoController extends Controller
 {
     public function index(){
 
-        return view('todo');
-        
+        $todo = new Todo;
+        $todoList = $todo->all();
+
+        return view('todo', ['todoList' => $todoList]);
+
     }
 
     public function store(Request $request){
@@ -20,6 +23,8 @@ class TodoController extends Controller
         $todo->name = $request->todo;
 
         $todo->save();
+
+        return redirect('/');
 
     }
 }

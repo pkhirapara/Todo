@@ -27,6 +27,12 @@
             <input type="text" name="todo" placeholder="your next todo"/>
             <button type="submit">add</button>
         </form>
+
+        <div>
+            @foreach ($todoList as $todo)
+                <h5>{{ $todo->name }}</h5>
+            @endforeach
+        </div>
         
     </body>
 </html>
