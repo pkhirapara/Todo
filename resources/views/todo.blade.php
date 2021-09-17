@@ -22,7 +22,8 @@
     </head>
     <body class="antialiased">
         <h1>todo app</h2>
-        <form action="" method="POST">
+        <form action="/todo" method="POST">
+            @csrf
             <input type="text" name="todo" placeholder="your next todo"/>
             <button type="submit">add</button>
         </form>
