@@ -10,7 +10,7 @@ class TodoController extends Controller
     public function index(){
 
         $todo = new Todo;
-        $todoList = $todo->all();
+        $todoList = $todo->latest()->get();
 
         return view('todo', ['todoList' => $todoList]);
 
