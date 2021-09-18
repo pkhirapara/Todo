@@ -42,6 +42,8 @@
 
                         <input type="text" name="todo" value="{{ $todo->name }}"/>
 
+                        <span>{{ $todo->created_at }}</span>
+
                         <button type="submit">Edit</button>
                         
                         @method('PUT')
