@@ -18,6 +18,11 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            .todo-list {
+                display: inline !important;
+            }
+
         </style>
     </head>
     <body class="antialiased">
@@ -30,7 +35,28 @@
 
         <div>
             @foreach ($todoList as $todo)
-                <h5>{{ $todo->name }}</h5>
+                <div>
+                
+                    <form class="todo-list" action="/todo/{{ $todo->id }}" method="POST">
+                        @csrf
+
+                        <input type="text" name="todo" value="{{ $todo->name }}"/>
+
+                        <button type="submit">Edit</button>
+                        
+                        @method('PUT')
+                    </form>
+
+                    <form class="todo-list" action="/todo/{{ $todo->id }}" method="POST">
+                        @csrf
+                        
+                        <button type="submit">Delete</button>
+
+                        @method('DELETE')
+
+                    </form>     
+                </div>   
+
             @endforeach
         </div>
         
