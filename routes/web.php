@@ -16,12 +16,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index']);
 
 Route::post('/generate', [LoginController::class, 'store']);
 
 
-Route::get('/', [TodoController::class, 'index']);
+Route::get('/todo', [TodoController::class, 'index']);
 
 Route::post('/todo', [TodoController::class, 'store']);
 
